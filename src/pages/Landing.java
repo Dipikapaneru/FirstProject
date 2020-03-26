@@ -14,8 +14,6 @@ public class Landing {
 	}
 	
 	
-	//Some Test comment
-	
 	By accessCodeField = By.id("search_acode");
 	By summitcode = By.id("submit_agentcode");
 	By submitcode = By.id("submit_Agent");
@@ -28,21 +26,7 @@ public class Landing {
 	By month=By.id("month");
 	By day = By.id("day");
 	By year = By.id("year");
-	
-	
-	public void fillPersonalInfo(String fname, String mi, String lname, 
-			String ssn, String month, String day, String year) {
-		
-		driver.findElement(firstname).sendKeys(fname);
-		driver.findElement(lastname).sendKeys(lname);
-		driver.findElement(social).sendKeys(ssn);
-		driver.findElement(middleinitial).sendKeys(mi);
-		
-		
-		enterDOB("10","23","1984");
-		
-		
-	}
+	By next2 = By.id("secondNext");
 	
 	
 	public void summit() {
@@ -71,6 +55,24 @@ public class Landing {
 		driver.findElement(firstname).sendKeys(fname);
 		
 		
+	}
+	public void next2button() {
+		driver.findElement(next2).click();
+	}
+	
+	
+	
+	
+	public void fillPersonalInfo(String fname, String mi, String lname, 
+			String ssn, String month, String day, String year) {
+		
+		driver.findElement(firstname).sendKeys(fname);
+		driver.findElement(lastname).sendKeys(lname);
+		driver.findElement(social).sendKeys(ssn);
+		driver.findElement(middleinitial).sendKeys(mi);
+		
+		
+		enterDOB("10","23","1984");
 	}
 	
 	public void enterDOB(String mm, String dd, String yyyy) {
