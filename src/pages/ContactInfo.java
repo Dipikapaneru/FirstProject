@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
  
 
 public class ContactInfo {
@@ -17,7 +18,7 @@ public class ContactInfo {
 	By email=By.name("agent_email");
 	By phoneno=By.id("phone2");
 	By fax=By.id("phone3");
-	By next4=By.id("fourthNext");
+	By nextfour=By.id("fourthNext");
 	
 	public void phonenum(String number) {
 		driver.findElement(phone).sendKeys(number);
@@ -25,15 +26,23 @@ public class ContactInfo {
 	
 	 
 	
-		//}
-		public void details(String em, String pn, String fn) {
-			//driver.findElement(time).sendKeys("tm");
-			driver.findElement(email).sendKeys("em");
-			driver.findElement(phoneno).sendKeys("pn");
-			driver.findElement(fax).sendKeys("fn");
+		public void details(String tm, String mail, String phonen, String faxn) {
+			driver.findElement(time).sendKeys(tm);
+			driver.findElement(email).sendKeys(mail);
+			driver.findElement(phoneno).sendKeys(phonen);
+			driver.findElement(fax).sendKeys(faxn);
+			
+			//tzone("Samoa (UTC-11)");
 		}
-			public void nextf() {
-			driver.findElement(next4).click();
+		 
+		public void tzone(String tm) {
+		Select tmz= new Select(driver.findElement(time)); 
+		 tmz.selectByVisibleText(tm);
 		}
+		
+		public void nextf() {
+		driver.findElement(nextfour).click();
+		}
+		
 	} 
 

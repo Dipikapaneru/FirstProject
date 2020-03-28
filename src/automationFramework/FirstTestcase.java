@@ -3,6 +3,7 @@ package automationFramework;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pages.AddressInfo;
 import pages.ContactInfo;
 import pages.Landing;
 
@@ -20,6 +21,7 @@ public class FirstTestcase {
 		
 		Landing landing = new Landing(driver);
 		ContactInfo contactinfo=new ContactInfo(driver);
+		AddressInfo adressinfo =new AddressInfo(driver);
 		
 		landing.accesscode("NENY0000");
 		landing.summit();
@@ -27,23 +29,40 @@ public class FirstTestcase {
 		landing.registeration();
 		landing.nextbutton();
 		
-		Thread.sleep(5000);
 		
-
+		Thread.sleep(5000);
 		landing.fillPersonalInfo("Test", "","Test","123454676","10", "23", "1984");
 		landing.next2button();
 		
+		
 		Thread.sleep(5000);
 		contactinfo.phonenum("7890008789");
-		 
-		contactinfo.details("email@xyz.com", "344657657", "47658769");
+		contactinfo.details("","saaw@go.com", "34567", "567889");
+		contactinfo.tzone("Samoa (UTC-11)");
 		contactinfo.nextf();
+		
+		
+		Thread.sleep(5000);
+		adressinfo.adressIn("37873", "2353", "34353", "76556767");
+		adressinfo.stateinfo("Ohio (OH)");
+		adressinfo.nextfi("", "");
+		// regtype info
+		Thread.sleep(5000);
+		adressinfo.regtype("Individual");
+		adressinfo.nexxt();
+		//businessinfo
+		Thread.sleep(5000);
+		adressinfo.businessinfo();
 	}
-	
-	
-	
-	
-	}
+		 
+}
+		
+		
+		
+		
+		
+		
+		
 //new WebDriverWait(driver, 20)
 //.until(ExpectedConditions.elementToBeClickable(By.id("agent_fname")))
 //.click();
