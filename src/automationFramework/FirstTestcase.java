@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.AddressInfo;
 import pages.ContactInfo;
 import pages.Landing;
+import pages.Signature;
 
 public class FirstTestcase {
 
@@ -41,7 +42,7 @@ public class FirstTestcase {
 		contactinfo.tzone("Samoa (UTC-11)");
 		contactinfo.nextf();
 		
-		
+	
 		Thread.sleep(5000);
 		adressinfo.adressIn("37873", "2353", "34353", "76556767");
 		adressinfo.stateinfo("Ohio (OH)");
@@ -53,6 +54,16 @@ public class FirstTestcase {
 		//businessinfo
 		Thread.sleep(5000);
 		adressinfo.businessinfo();
+		
+		Thread.sleep(5000);
+		adressinfo.paymentinfo();
+		adressinfo.infopayment("042000013", "Test Fed", "6743647", "987483", "");
+		
+		
+		Thread.sleep(5000);
+		Signature signature = new Signature(driver);
+		String verificationCode = signature.retriveVerificationCode();
+		signature.enterVerificationCode(verificationCode);
 	}
 		 
 }

@@ -22,7 +22,15 @@ public class AddressInfo {
 	By nex=By.id("rtNext");
 	By check2=By.id("bypass1");
 	By next6=By.id("sixthNext");
+	By radio=By.id("radioExample4");
 	
+	
+	By radio2=By.id("radioExample3");
+	By routingno=By.id("broker_routing_num");
+	By bankname=By.id("broker_bank_name");
+	By accountno=By.id("broker_acct_num");
+	By bankaccount=By.id("broker_bank_acct");
+	By next7=By.id("seventhNext");
 	
 	public void adressIn(String Sa, String Apt, String Ci, String Zip ) {
 		driver .findElement(Add).sendKeys(Sa);
@@ -60,6 +68,17 @@ public class AddressInfo {
 			 driver.findElement(next6).click();
 	 }
 	 
-	 
-	 
+	 public void paymentinfo() {
+		 driver.findElement(radio).click();
+		 driver.findElement(radio2).click();
+	 }
+	 public void infopayment(String R, String Bn, String An, String Nba, String C) {
+		 driver.findElement(routingno).sendKeys(R);
+		 driver.findElement(bankname).sendKeys(Bn);
+		 driver.findElement(accountno).sendKeys(An);
+		 driver.findElement(bankaccount).sendKeys(Nba);
+		 driver.findElement(next7).click();
+		 
+		 
+	 }
 }
